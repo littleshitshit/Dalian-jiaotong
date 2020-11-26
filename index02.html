@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index02.css">
+</head>
+<body>
+
+<!--控制台-->
+<div id="control">
+    <button onclick="show()">增删改查</button>
+
+</div>
+
+
+<form  id="searchA" >
+    <input type="number" class="val"  placeholder="输入序号" >
+    <input type="text" class="val" placeholder="输入姓名">
+    <input type="radio" class="select" value="男" name="select" checked>男
+    <input type="radio" class="select" value="女" name="select">女
+    <input type="button" value="添加" onclick="sub()">
+
+    <input type="number" id="num"  placeholder="按序号查找" >
+    <input type="text" id="name" placeholder="按姓名查找">
+    <input type="button" value="查找" onclick="ser()">
+    <input type="button" value="删除" onclick="del()">
+    <input type="button" value="修改" onclick="chan()">
+
+    <input type="number" id="numC"  placeholder="序号修改为" >
+    <input type="text" id="nameC" placeholder="姓名修改为">
+    <input type="radio" class="select1" value="男" name="select1" checked>男
+    <input type="radio" class="select1" value="女" name="select1">女
+<!--    <input type="text" id="sexC" placeholder="性别修改为">-->
+
+
+</form>
+<!--表单-->
+<table border="1" id="tt">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>df</td>
+        <td>nan</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>dfsd</td>
+        <td>nan</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>dfsd</td>
+        <td>nan</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>dfsd</td>
+        <td>nan</td>
+    </tr>
+</table>
+</body>
+<script>
+    "use strict";
+    /*--------------增-------------------*/
+    //增加新元素
+    function add(x,y,z){
+        var table=document.getElementById("tt");
+        document.body.appendChild(table);
+        var tr=document.createElement('tr');
+        table.appendChild(tr);
+        var td=document.createElement('td');
+        td.innerHTML=x;
+        tr.appendChild(td);
+        var td=document.createElement('td');
+        td.innerHTML=y;
+        tr.appendChild(td);
+        var td=document.createElement('td');
+        td.innerHTML=z;
+        tr.appendChild(td);
+    }
+    //主函数
+    function sub(){
+        var val=document.getElementsByClassName("val");
+        var sex=document.getElementsByClassName("select");
+        var a;
+        for(let i=0;i<sex.length;i++){
+            if(sex[i].checked){
+                a=i;
+            }
+        }
+        var sexx=sex[a].value;
+
+        if((val[0].value==="")||(val[1].value==="")){
+                alert("有内容未填写!");
+        }else{
+            add(val[0].value,val[1].value,sexx);
+        }
+    }
+
+    /*--------------查-------------------*/
+    //点击显示隐藏
+    function show(){
+
+        let c=document.getElementById("searchA");
+        if(c.style.visibility==="visible"){
+            c.style.left="-600px";
+            c.style.visibility="hidden";
+        }else{
+            c.style.left="0px";
+            c.style.visibility="visible";
+        }
+    }
+    function search(f,n,j){
+        clearbg(f);
+        for(var i=1;i<f.length;i++){
+            if((f[i].getElementsByTagName('td')[j].innerHTML)===(n.value)){
+                f[i].style.backgroundColor="yellow";
+            }
+        }
+    }
+    function search1(f,n,a){
+        clearbg(f);
+        for(var i=1;i<f.length;i++){
+            if(((f[i].getElementsByTagName('td')[0].innerHTML)===(n.value))&&((f[i].getElementsByTagName('td')[1].innerHTML)===(a.value))){
+                f[i].style.backgroundColor="yellow";
+            }
+        }
+    }
+    //清空背景
+    function clearbg(f){
+        for(let j=1;j<f.length;j++) {
+            f[j].style.backgroundColor = "white";
+        }
+    }
+    //主函数
+    function ser(){
+        var num=document.getElementById("num");
+        var name=document.getElementById("name");
+        //console.log(name.value);
+        var table=document.getElementById("tt");
+        var f=table.getElementsByTagName("tr");
+        //console.log(f[1].getElementsByTagName('td')[1].innerText);
+        console.log();
+        if(num.value===""&&name.value!==""){
+            console.log("通过姓名查找");
+            search(f,name,1);
+        }else if(name.value===""&&num.value!==""){
+            console.log("通过序号查找");
+            search(f,num,0);
+        } else if(num.value!==""&&name.value!==""){
+            console.log("序号姓名一同查找");
+            search1(f,num,name);
+        }else{
+            alert("没有该成员！");
+            console.log("no");
+        }
+        return f;
+
+         }
+
+    /*--------------删-------------------*/
+    function del(){
+        var f=ser();
+        for(let i=1;i<f.length;i++){
+            if(f[i].style.backgroundColor==="yellow"){
+                f[i].remove();
+                i--;//修改指针位置
+            }
+
+        }
+    }
+    /*--------------改-------------------*/
+function chan(){
+    var f=ser();
+    for(var i=1;i<f.length;i++){
+        if(f[i].style.backgroundColor==="yellow"){
+            //更新数据
+            var numC=document.getElementById("numC");
+            var nameC=document.getElementById("nameC");
+            var sexC=document.getElementsByClassName("select1");
+            var a;
+            for(let i=0;i<sexC.length;i++){
+                if(sexC[i].checked){
+                    a=i;
+                }
+            }
+            var sexN=sexC[a].value;
+            console.log(numC.value);
+            console.log(f[i].getElementsByTagName('td')[0].innerText);
+            if(numC.value!==""&&nameC.value!==""&&sexC.value!==""){
+                var bool=window.confirm("是否修改该成员?");
+                if(bool===true){
+                    f[i].getElementsByTagName('td')[0].innerText=numC.value;
+                    f[i].getElementsByTagName('td')[1].innerText=nameC.value;
+                    f[i].getElementsByTagName('td')[2].innerText=sexN;
+                }
+            }else{
+                alert("数据填写不完全");
+
+            }
+
+        }
+    }
+
+}
+</script>
+</html>

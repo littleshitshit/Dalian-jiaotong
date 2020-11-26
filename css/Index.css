@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+
+
+
+}
+body{
+    min-width: 1200px;
+}
+nav{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 960px;
+    height: 120px;
+    background-repeat: repeat;
+    background-image: url("../img/bg_header.png") ;
+    color: white;
+
+
+
+}
+nav img{
+    float: left;
+    width: 360px;
+    height: 120px;
+}
+nav ul{
+    display: block;
+    float: left;
+    list-style: none;
+    width:600px;
+}
+nav ul li{
+    float: left;
+
+}
+#topN li:hover{
+    color: #003262;
+    opacity: 0.3;
+
+}
+#downN li:hover{
+    background-color: #003262;;
+
+}
+#topN{
+
+    height: 48px;
+}
+
+#downN{
+    height: 72px;
+}
+#topN{
+
+    height: 48px;
+}
+#topN li{
+    height: 100%;
+    width:59px;
+    border-right: 1px solid #597c9c;
+    font-size: 13px;
+    line-height: 48px;
+    text-align: center;
+}
+#downN li{
+    height: 100%;
+    width:75px;
+    font-size: 15px;
+    line-height: 72px;
+    text-align: center;
+}
+#topN li img{
+    width: 100%;
+    height: 100%;
+    float: left;
+
+}
+#downN  p{
+    font-size: 15px;
+    line-height: 72px;
+    text-align: center;
+}
+ul[id*="nor"]{
+    position: relative;
+    top: 0px;
+    width: 75px;
+
+    background-color: pink;
+}
+#nav2_nor{
+    width: 100px;
+}
+#nav5{
+    position: relative;
+    top: 0px;
+    width: 200px;
+    background-color: #003262;
+
+}
+#nav5 li{
+    float: left;
+    width: 100%;
+    height: 60px;
+    line-height: 40px;
+    display: none;
+
+}
+#nav7_nor{
+    width: 80px;
+}
+#nav1_nor li{
+    float: left;
+    width: 75px;
+    height: 40px;
+    line-height: 40px;
+    display: none;
+
+
+}
+#downN li:nth-child(2):hover #nav1_nor li{
+    display: block;
+}
+#downN li:nth-child(3):hover #nav2_nor li{
+    display: block;
+}
+#downN li:nth-child(4):hover #nav3_nor li{
+    display: block;
+}
+#downN li:nth-child(5):hover #nav4_nor li{
+    display: block;
+}
+#downN li:nth-child(6):hover #nav5 li{
+    display: block;
+}
+#downN li:nth-child(7):hover #nav6_nor li{
+    display: block;
+}
+#downN li:nth-child(8):hover #nav7_nor li{
+    display: block;
+}
+#nav2_nor li{
+    float: left;
+    width: 90px;
+    height: 50px;
+    line-height: 40px;
+    display: none;
+
+}
+#nav3_nor li{
+    float: left;
+    width: 100%;
+    height: 50px;
+    line-height: 40px;
+    display: none;
+}
+#nav4_nor li{
+    float: left;
+    width: 75px;
+    height: 50px;
+    line-height: 40px;
+    display: none;
+}
+#nav6_nor li{
+    float: left;
+    width: 75px;
+    height: 50px;
+    line-height: 40px;
+    display: none;
+}
+#nav7_nor li{
+    float: left;
+    width: 75px;
+    height: 50px;
+    line-height: 40px;
+    display: none;
+}
+
+
+
+#bg{
+    width: 100%;
+    height: 55%;
+    position: absolute;
+    top: 0px;
+    z-index: -100;
+
+}
+#bg img{
+    width: 100%;
+    height: 100%;
+}
+
+#context{
+    margin: 0 auto;
+    width: 1200px;
+    height: 350px;
+    margin-bottom: 50px;
+    margin-top: 400px;
+}
+#context div{
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-right: 40px;
+    border-bottom: solid 2px #e5e5e5;
+
+}
+#context div .con{
+    width: 100%;
+    height: 47px;
+
+    border-bottom: solid 2px #e5e5e5;
+    overflow: hidden;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+#context div .con img{
+    float: left;
+    width: 25px;
+    margin-top: 11px;
+
+}
+#context div .con h3{
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 12px;
+    float: left;
+    line-height: 47px;
+}
+#context div .con p{
+    font-weight: 500;
+    margin-left: 12px;
+    float: left;
+    line-height: 47px;
+    color: #c4c4c4;
+}
+#context div .con a{
+    float: right;
+    line-height: 47px;
+    color: black;
+}
+#context div span{
+    float: left;
+    display: block;
+    margin-top: 10px;
+}
+
+#pic{
+    margin: 0 auto;
+    width: 1352px;
+    height: 225px;
+    margin-bottom: 50px;
+
+}
+#pic div{
+
+    width: 338px;
+    height: 225px;
+    float: left;
+}
+#pic div .show:hover{
+    background-color: #003262;
+    opacity: 0.5;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    color: white;
+    font-size: 12px;
+    background:url("../img/ff750914-bfc7-4bb1-a843-005703087a52.png")  center;
+}
+footer div{
+    margin-top: 10px;
+}
+footer div:nth-child(1){
+    flex: 0.4;
+    display: flex;
+
+
+
+}
+footer div:nth-child(2){
+    width: 200px;
+
+}
+footer div:nth-child(3){
+    flex: 0.4;
+    display: flex;
+}
+footer div:nth-child(1) ul{
+    list-style: none;
+    flex:0.25;
+}
+footer div:nth-child(1) ul li{
+    margin-top: 10px;
+   margin-left: 20px;
+}
+footer div:nth-child(1) ul li:nth-child(1){
+    font-size: 13px ;
+    font-weight: bold;
+}
+footer div:nth-child(3) ul li:nth-child(1){
+    font-size: 13px ;
+    font-weight: bold;
+}
+
+
+footer div:nth-child(3) ul{
+    list-style: none;
+
+}
+footer div:nth-child(3) ul li{
+    width: 100px;
+    margin-top: 10px;
+
+
+}
+#issue{
+
+    display: block;
+    width: 190px;
+}
+#issue li{
+
+
+    width: 100%;
+}
+#bb{
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+
+
